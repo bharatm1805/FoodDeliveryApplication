@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<context:component-scan base-package="FoodDeliveryAppResOwner.controller"></context:component-scan>
+<context:annotation-config/>
+<bean class ="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/pages/" />
+<property name="suffix" value=".jsp" />
+</bean>
+<bean id="ind1Dao" class="FoodDeliveryAppResOwner.Dao.IndRestaurant1Dao">
+</bean>
+<bean id="ind2Dao" class="FoodDeliveryAppResOwner.Dao.IndRestaurant2Dao">
+</bean>
+<bean id="ita1Dao" class="FoodDeliveryAppResOwner.Dao.ItaRestaurant1Dao">
+</bean>
+<bean id="ita2Dao" class="FoodDeliveryAppResOwner.Dao.ItaRestaurant2Dao">
+</bean>
+<bean id="userDao" class="FoodDeliveryAppResOwner.Dao.UserDao">
+</bean>
+<bean id="orderDao" class="FoodDeliveryAppResOwner.Dao.OrdersDao">
+</bean>
+<bean id="resDao" class="FoodDeliveryAppResOwner.Dao.ResOwnerDao">
+</bean>
+<bean id="fbDao" class="FoodDeliveryAppResOwner.Dao.FeedbackDao">
+</bean>
+<bean id="payDao" class="FoodDeliveryAppResOwner.Dao.PayDao">
+</bean>
+<bean id="deDao" class="FoodDeliveryAppResOwner.Dao.DeliveryExecutiveDao">
+</bean>
+
+<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+	<property name="validationMessageSource" ref="messageSource"/>
+</bean>
+</beans>
